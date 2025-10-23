@@ -32,13 +32,14 @@ export function VideoBackground({ videoUrl }: VideoBackgroundProps) {
           playsInline
           onError={handleError}
           onLoadedData={handleLoadedData}
-          className="absolute inset-0 w-full h-full object-cover opacity-40 blur-[2px]"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-40 blur-[1px] md:blur-[2px]"
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
       )}
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+      {/* Overlay gradient - plus léger sur mobile pour mieux voir la vidéo */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50 md:from-black/60 md:via-black/40 md:to-black/80" />
     </div>
   );
 }
