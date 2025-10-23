@@ -30,7 +30,7 @@ export function MainPage({ startAudio = false }: MainPageProps) {
   //    - Ajoutez l'URL de votre photo ci-dessous
   //    - Formats supportés : .jpg, .png, .gif, .webp
   //    - Exemple : const avatarUrl = 'https://votresite.com/avatar.jpg';
-  const avatarUrl = 'https://api.dicebear.com/7.x/avataaars/svg?seed=vvm';
+  const avatarUrl = 'https://i.ibb.co/xt5Ts8h3/qlf.png';
   
   // 4. 📝 Pour changer vos INFORMATIONS DE PROFIL :
   const username = 'qlf';           // Votre pseudo
