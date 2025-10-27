@@ -37,6 +37,16 @@ export function MainPage({ startAudio = false }: MainPageProps) {
   const tag = '#quelamif';            // Votre tag/identifiant
   const description = 'UUID : 1';  // Votre description
   
+  // 5. 🏆 Pour ajouter des BADGES/ICÔNES sous votre pseudo :
+  //    - Ajoutez les URLs de vos icônes dans le tableau ci-dessous
+  //    - Elles s'afficheront en dessous du pseudo
+  //    - Exemple : const badges = ['url1', 'url2', 'url3'];
+  const badges = [
+    'https://i.ibb.co/p6nKhPY0/bughunter.png',
+    'https://i.ibb.co/k28w3Whx/early.png',
+    'https://i.ibb.co/dsvmhSVQ/dev.png'
+  ];
+  
   // ⚠️ IMPORTANT :
   // - Les fichiers doivent être hébergés en ligne (pas de fichiers locaux)
   // - Utilisez des services comme : Cloudinary, Imgur, votre propre serveur, etc.
@@ -68,6 +78,7 @@ export function MainPage({ startAudio = false }: MainPageProps) {
             username={username}
             tag={tag}
             description={description}
+            badges={badges}
           />
           
           <motion.div
@@ -115,7 +126,7 @@ export function MainPage({ startAudio = false }: MainPageProps) {
             className="flex items-center justify-center gap-2 text-white/60 text-sm mt-12"
           >
             <MapPin className="w-4 h-4" />
-            <span>Lyon, France</span>
+            <span>Grigny, Essonne, France</span>
           </motion.div>
         </motion.div>
       </div>
