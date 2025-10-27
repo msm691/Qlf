@@ -6,13 +6,15 @@ interface ProfileCardProps {
   username?: string;
   tag?: string;
   description?: string;
+  badges?: string[]; // URLs des icônes à afficher
 }
 
 export function ProfileCard({ 
   avatarUrl = 'https://api.dicebear.com/7.x/avataaars/svg?seed=vvm', 
   username = 'vvm',
   tag = '#381PPS',
-  description = 'joined 11 months ago'
+  description = 'joined 11 months ago',
+  badges = []
 }: ProfileCardProps) {
   return (
     <div className="flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -27,11 +29,26 @@ export function ProfileCard({
         </div>
       </div>
       
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col items-center gap-2">
         <h1 className="text-white text-3xl tracking-wide">{username}</h1>
-        <svg className="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
+        
+        {/* Affichage des badges sous le pseudo */}
+        {badges.length > 0 && (
+          <div className="flex items-center gap-2 mt-1">
+            {badges.map((badgeUrl, index) => (
+              <div 
+                key={index}
+                className="w-5 h-5 flex-shrink-0 transition-transform duration-300 hover:scale-110"
+              >
+                <ImageWithFallback
+                  src={badgeUrl}
+                  alt={`Badge ${index + 1}`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       
       <div className="text-cyan-400 text-lg tracking-wider">{tag}</div>
