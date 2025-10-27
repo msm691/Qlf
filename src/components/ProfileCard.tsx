@@ -38,7 +38,7 @@ export function ProfileCard({
             {badges.map((badgeUrl, index) => (
               <div 
                 key={index}
-                className="w-6 h-6 transition-transform duration-300 hover:scale-110"
+                className="w-5 h-5 flex-shrink-0 transition-transform duration-300 hover:scale-110"
               >
                 <ImageWithFallback
                   src={badgeUrl}
