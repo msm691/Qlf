@@ -126,7 +126,7 @@ export function MainPage({ startAudio = false }: MainPageProps) {
             className="flex items-center justify-center gap-2 text-white/60 text-sm mt-12"
           >
             <MapPin className="w-4 h-4" />
-            <span>Grigny, Essonne, France</span>
+            <span>Lyon, France</span>
           </motion.div>
         </motion.div>
       </div>
